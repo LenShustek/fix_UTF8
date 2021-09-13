@@ -1,6 +1,7 @@
 E28098 "'"   left single quote
 E28099 "'"   right single quote
 E2808B ""    zero-width space
+EFBBBF ""    "byte order mark", another zero-width space
 E280A2 "o"   bullet
 E280A3 ">"   triangular bullet
 E28183 "-"   hyphen bullet
