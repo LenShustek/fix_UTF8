@@ -1,16 +1,16 @@
 fix_UTF8: repair UTF-8 codes in Eudora mailboxes
 
-This is a command-line (non-GUI) program that changes the non-ASCII UTF-8 characters
-stored inside a Eudora mailbox file into some related ASCII representation that
-will be rendered correctly.
+This is a command-line (non-GUI) Windows program that changes the non-ASCII
+UTF-8 characters stored inside a Eudora mailbox file into some related ASCII
+representation that will be rendered correctly.
 
-It reads the character translations from a file named "translations.txt".
+It reads the character translations from lines in a file named "translations.txt".
 Each line contains a hex byte string representing a UTF-8 character to search for,
 and a quoted string representing the ASCII replacement characters. The rules are:
   - The string searched for may be 1 to 4 bytes long.
   - The replacement may not be longer than the string searched for.
   - If the replacement is shorter than the search string, the remaining bytes
-    are zeroed in the mailbox, which is ignored when Eudora renders the text.
+    are zeroed in the mailbox, and they are ignored when Eudora renders the text.
   - The replacement string may be delimited either by " or ', and the delimiter
     may not appear within the string.
   - The strings may be separated by one or more spaces.
@@ -25,12 +25,12 @@ and a quoted string representing the ASCII replacement characters. The rules are
       C2A9  "c"   copyright sign
 
 This program should not be used when Eudora is running, and there is
-a check at the beginning that attempts to enforce that.
+a check that attempts to enforce that.
 
 When you restart Eudora after modifying a .mbx mailbox file, Eudora will
 rebuild the .toc table-of-contents file if it has an older date. In order
 to prevent that, we change the timestamp of the table-of-contents file
-to the current time, even though we don't modify it.
+to the current time, even though we don't modify that file..
 
 The program is invoked with a single argument which is the base filename
 of both the mailbox and table-of-contents files:
