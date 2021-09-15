@@ -1,3 +1,6 @@
+****FLASH: This program has been superseded by Eudora_fix_mbx.
+**** See https://github.com/LenShustek/Eudora_fix_mbx
+
 fix_UTF8: repair UTF-8 codes in Eudora mailboxes
 
 This is a command-line (non-GUI) Windows program that changes the non-ASCII
